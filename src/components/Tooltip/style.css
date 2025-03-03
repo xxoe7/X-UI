@@ -1,0 +1,82 @@
+.xy-tooltip {
+  --xy-popover-bg-color: var(--xy-bg-color-overlay);
+  --xy-popover-font-size: var(--xy-font-size-base);
+  --xy-popover-border-color: var(--xy-border-color);
+  --xy-popover-padding: 12px;
+  --xy-popover-border-radius: 4px;
+  display: inline-block;
+}
+
+.xy-tooltip {
+  .xy-tooltip__popper {
+    background: var(--xy-popover-bg-color);
+    border-radius: var(--xy-popover-border-radius);
+    border: 1px solid var(--xy-popover-border-color);
+    padding: var(--xy-popover-padding);
+    color: var(--xy-text-color-regular);
+    line-height: 1.4;
+    text-align: justify;
+    font-size: var(--xy-popover-font-size);
+    box-shadow: var(--xy-box-shadow-light);
+    word-break: break-all;
+    box-sizing: border-box;
+    z-index: 1000;
+    #arrow,
+    #arrow::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      box-sizing: border-box;
+      background: var(--xy-popover-bg-color);
+    }
+    #arrow {
+      visibility: hidden;
+    }
+    #arrow::before {
+      visibility: visible;
+      content: '';
+      transform: rotate(45deg);
+    }
+    &[data-popper-placement^='top'] > #arrow {
+      bottom: -5px;
+    }
+
+    &[data-popper-placement^='bottom'] > #arrow {
+      top: -5px;
+    }
+
+    &[data-popper-placement^='left'] > #arrow {
+      right: -5px;
+    }
+
+    &[data-popper-placement^='right'] > #arrow {
+      left: -5px;
+    }
+    &[data-popper-placement^='top'] > #arrow::before {
+      border-right: 1px solid var(--xy-popover-border-color);
+      border-bottom: 1px solid var(--xy-popover-border-color);
+    }
+    &[data-popper-placement^='bottom'] > #arrow::before {
+      border-left: 1px solid var(--xy-popover-border-color);
+      border-top: 1px solid var(--xy-popover-border-color);
+    }
+    &[data-popper-placement^='left'] > #arrow::before {
+      border-right: 1px solid var(--xy-popover-border-color);
+      border-top: 1px solid var(--xy-popover-border-color);
+    }
+    &[data-popper-placement^='right'] > #arrow::before {
+      border-left: 1px solid var(--xy-popover-border-color);
+      border-bottom: 1px solid var(--xy-popover-border-color);
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity var(--xy-transition-duration);
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,66 @@
+body{
+    font-family: var(--xy-font-family);
+    font-weight: var(--xy-font-weight-primary);
+    font-size: var(--xy-font-size-base);
+    color:var(--xy-text-color-primary);
+    /* 让字体在不同浏览器和操作系统上都能有较好的显示效果 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a{
+    text-decoration: none;
+    color:var(--xy-color-primary);
+    &:hover,&:focus{color:var('--xy-color-primary-3')};
+    &:active{color:var(--xy-color-primary-drak-2)}
+}
+h1,h2,h3,h4,h5,h6{
+    color:var(--xy-text-color-primary);
+    font-weight: inherit;
+    &:first-child{margin-top:0}
+    &:last-child{margin-bottom:0}
+}
+h1{
+    font-size: var(--xy-font-size-extra-large);
+}
+h2{
+    font-size: var(--xy-font-size-large);
+}
+h3{
+    font-size: var(--xy-font-size-medium);
+}
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+}
+
+p {
+  line-height: 1.8;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+sup,
+sub {
+  font-size: var(--vk-font-size-small);
+}
+
+small {
+  font-size: var(--vk-font-size-extra-small);
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid var(--vk-border-color-lighter);
+}

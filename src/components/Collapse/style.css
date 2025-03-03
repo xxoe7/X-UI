@@ -1,0 +1,58 @@
+.xy-collapse {
+  --xy-collapse-border-color: var(--xy-border-color-light);
+  --xy-collapse-header-height: 48px;
+  --xy-collapse-header-bg-color: var(--xy-fill-color-blank);
+  --xy-collapse-header-text-color: var(--xy-text-color-primary);
+  --xy-collapse-header-font-size: 13px;
+  --xy-collapse-content-bg-color: var(--xy-fill-color-blank);
+  --xy-collapse-content-font-size: 13px;
+  --xy-collapse-content-text-color: var(--xy-text-color-primary);
+  --xy-collapse-disabled-text-color: var(--xy-disabled-text-color);
+  --xy-collapse-disabled-border-color: var(--xy-border-color-lighter);
+  border-top: 1px solid var(--xy-collapse-border-color);
+  border-bottom: 1px solid var(--xy-collapse-border-color);
+}
+.xy-collapse-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--xy-collapse-header-height);
+  line-height: var(--xy-collapse-header-height);
+  background-color: var(--xy-collapse-header-bg-color);
+  color: var(--xy-collapse-header-text-color);
+  cursor: pointer;
+  font-size: var(--xy-collapse-header-font-size);
+  font-weight: 500;
+  transition: border-bottom-color var(--xy-transition-duration);
+  outline: none;
+  border-bottom: 1px solid var(--xy-collapse-border-color);
+  &.is-disabled {
+    color: var(--xy-collapse-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+  }
+  &.is-active {
+    border-bottom-color: transparent;
+    .header-angle {
+      transform: rotate(90deg);
+    }
+  }
+  .header-angle {
+    transition: transform var(--xy-transition-duration);
+  }
+}
+.xy-collapse-item__content {
+  will-change: height;
+  background-color: var(--xy-collapse-content-bg-color);
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: var(--xy-collapse-content-font-size);
+  color: var(--xy-collapse-content-text-color);
+  border-bottom: 1px solid var(--xy-collapse-border-color);
+  padding-bottom: 25px;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: height var(--xy-transition-duration);
+}
